@@ -1,15 +1,38 @@
+import { createContext, useState, useEffect } from "react";
+import axios from "axios";
 
-import {createContext} from 'react'
+const KioskContext = createContext();
+const KioskProvider = ({ children }) => {
+  const [categorias, setCategorias] = useState([]);
+  const [categoriaActual, setCategoriaActual] = useState({});
 
-const KioskContext = createContext()
-const KioskProvider = ({children}) => {
-    return(
-        <KioskContext.Provider value={{}}>
-            {children}
-        </KioskContext.Provider>
-    )
-}
+  const getCategorias = async () => {
+    const { data } = await axios("/api/categorias");
+    setCategorias(data);
+  };
 
-export {KioskProvider}
+  useEffect(() => {
+    getCategorias();
+  }, []);
 
-export default KioskContext
+  const handleClickCategoria = (id) => {
+    const categoria = categorias.filter((cat) => cat.id === id);
+    setCategoriaActual(categoria[0])
+  };
+
+  return (
+    <KioskContext.Provider
+      value={{
+        categorias,
+        categoriaActual,
+        handleClickCategoria,
+      }}
+    >
+      {children}
+    </KioskContext.Provider>
+  );
+};
+
+export { KioskProvider };
+
+export default KioskContext;
