@@ -11,7 +11,7 @@ export default function Resumen() {
       {pedido.length === 0 ? (
         <p className="text-center text-2xl ">No Hay Elementos en tu Pedido</p>
       ) : (
-        pedido.map((producto) => (
+        pedido?.map((producto) => (
           <ResumenProducto key={producto.id} producto={producto} />
         ))
       )}
