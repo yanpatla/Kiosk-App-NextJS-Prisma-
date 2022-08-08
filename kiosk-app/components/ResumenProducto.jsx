@@ -2,7 +2,7 @@ import Image from "next/image";
 import { formatearDinero } from "../helpers";
 import useKiosk from "../hooks/useKioks";
 const ResumenProducto = ({ producto }) => {
-  const { handleEditarCantidades ,handleEliminarProducto} = useKiosk();
+  const { handleEditarCantidades, handleEliminarProducto } = useKiosk();
   return (
     <div className="shadow p-5 mb-3 flex gap-10 items-center">
       <div className="md:w-1/6">
@@ -16,10 +16,10 @@ const ResumenProducto = ({ producto }) => {
 
       <div className="md:w-4/6">
         <p className="text-3xl font-bold">{producto?.nombre}</p>
-        <p className="text-xl font-bold mt-2"> Cantidad:{producto.cantidad}</p>
+        <p className="text-xl font-bold mt-2"> Quantity:{producto.cantidad}</p>
         <p className="text-xl font-bold text-amber-500 mt-2">
           {" "}
-          Precio:{formatearDinero(producto.precio)}
+          Price:{formatearDinero(producto.precio)}
         </p>
 
         <p className="text-sm text-gray-700 mt-2">
@@ -31,7 +31,7 @@ const ResumenProducto = ({ producto }) => {
         <button
           className="bg-sky-700 flex gap-2 items-center px-5 py-2 text-white rounded-md font-bold uppercase shadow-md w-full"
           type="button"
-          onClick={()=>handleEditarCantidades(producto.id)}
+          onClick={() => handleEditarCantidades(producto.id)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -41,12 +41,12 @@ const ResumenProducto = ({ producto }) => {
           >
             <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
           </svg>
-          Editar
+          Edit
         </button>
         <button
           className="bg-red-700 flex gap-2 items-center  px-5 py-2 text-white rounded-md font-bold uppercase shadow-md w-full mt-3"
           type="button"
-          onClick={()=> handleEliminarProducto(producto.id)}
+          onClick={() => handleEliminarProducto(producto.id)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@ const ResumenProducto = ({ producto }) => {
               clipRule="evenodd"
             />
           </svg>
-          Eliminar
+          Delete
         </button>
       </div>
     </div>

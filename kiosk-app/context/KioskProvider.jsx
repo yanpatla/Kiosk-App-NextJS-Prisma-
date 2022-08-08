@@ -56,10 +56,10 @@ const KioskProvider = ({ children }) => {
         productoState.id === producto.id ? producto : productoState
       );
       setPedido(pedidoActualizado);
-      toast.success("Guardado Correctamente");
+      toast.success("Correctly Saved");
     } else {
       setPedido([...pedido, producto]);
-      toast.success("Agregado al Pedido");
+      toast.success("Added to Cart");
     }
 
     setModal(false);
@@ -94,7 +94,7 @@ const KioskProvider = ({ children }) => {
       setPedido([]);
       setNombre("");
       setTotal(0);
-      toast.success("Pedido Realizado Correctamente")
+      toast.success("Order placed successfully")
       setTimeout(()=>{
         router.push("/")
       },3000)

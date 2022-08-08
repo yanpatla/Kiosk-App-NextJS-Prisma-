@@ -104,7 +104,7 @@ const ModalProducto = () => {
           //Esto hace que haciendo una copia del producto la cantidad se inegre al objeto
           onClick={() => handleAgregarPedido({ ...producto, cantidad })}
         >
-          {edicion ? "Guardar Cambios" : "Anadir el Pedido"}
+          {edicion ? "Save Changes" : "Add Order"}
         </button>
       </div>
     </div>

@@ -10,9 +10,7 @@ export default function Home() {
     <Layout pagina={`Menu ${categoriaActual?.nombre}`}>
       <h1 className="text-4xl font-black">{categoriaActual?.nombre}</h1>
 
-      <p className="text-2xl my-10">
-        Elige y personalia tu peido a continuacion
-      </p>
+      <p className="text-2xl my-10">Choose and customize your order below</p>
 
       <div className="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 ">
         {categoriaActual?.productos?.map((producto) => (

@@ -27,7 +27,7 @@ const Producto = ({ producto }) => {
             handleSetProducto(producto);
           }}
         >
-          Agregar
+          Add
         </button>
       </div>
     </div>

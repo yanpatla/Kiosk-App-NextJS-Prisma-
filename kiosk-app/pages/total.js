@@ -14,14 +14,14 @@ export default function Total() {
   return (
     <Layout pagina={"Resumen"}>
       <h1 className="text-4xl font-black">Total</h1>
-      <p className="text-2xl my-10">Confirmar tu Pedido a Continuacion</p>
+      <p className="text-2xl my-10">Confirm your Order Below</p>
       <form onSubmit={colocarOrden}>
         <div>
           <label
             htmlFor="nombre"
             className="block uppercase text-slate-800 font-bold text-xl"
           >
-            Nombre
+            Name
           </label>
           <input
             type="text"
@@ -34,7 +34,7 @@ export default function Total() {
 
         <div className="mt-10">
           <p className="text-2xl">
-            Total a Pagar 
+            Total Payable
             <span className="font-bold"> {formatearDinero(total)}</span>
           </p>
         </div>
@@ -47,7 +47,7 @@ export default function Total() {
                 ? "bg-indigo-100 hover:cursor-not-allowed"
                 : "bg-indigo-600 hover:bg-indigo-800 cursor-pointer"
             }  w-full lg:w-auto px-5 py-2 rounded font-bold uppercase text-white text-center`}
-            value="Confirmar Pedido"
+            value="Confirm Order"
             disabled={comprobarPedido()}
           />
         </div>
